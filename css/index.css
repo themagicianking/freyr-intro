@@ -53,6 +53,7 @@ header {
 footer {
   justify-content: center;
   bottom: 0;
+  z-index: 100;
 }
 
 #about, #skills, #experience, #connect {
@@ -198,6 +199,10 @@ button {
     top: 0;
     z-index: 100;
     padding: 0px;
+  }
+
+  footer {
+    position: fixed;
   }
 
   .header-and-footer {
