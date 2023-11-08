@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Major+Mono+Display&display=swap");
 
-body {
+#page-container, body {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
