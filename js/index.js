@@ -102,3 +102,25 @@ messageForm.addEventListener("submit", function () {
 
   messageForm.reset();
 });
+
+//Fetch GitHub Repositories
+githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/themagicianking/repos?per_page=100");
+githubRequest.send();
+githubRequest.addEventListener("load", function () {
+  repositories = JSON.parse(this.response);
+  console.log(repositories);
+  projectSection = document.getElementById("projects");
+  projectList = projectSection.querySelector("ul");
+  for (let i = 0; i < repositories.length; i++) {
+    project = document.createElement("li");
+    projectDescription = document.createElement("span");
+    projectDescription.innerText = " — " + repositories[i].description;
+    projectLink = document.createElement("a");
+    projectLink.innerText = repositories[i].name;
+    projectLink.href = repositories[i].html_url;
+    project.appendChild(projectLink);
+    project.appendChild(projectDescription);
+    projectList.appendChild(project);
+  };
+});
