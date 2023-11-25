@@ -10,6 +10,47 @@
   margin: 0;
 }
 
+#top-section {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+}
+
+#skills {
+  max-width: 150px;
+  margin: 30px 0px 0px 0px;
+}
+
+#projects {
+  max-width: 300px;
+  min-width: 50%;
+  margin: 30px 30px;
+}
+
+#about {
+  max-width: 150px;
+  margin: 30px 0px 0px 0px;
+}
+
+#experience {
+  display: flex;
+  min-width: 75%;
+  margin: 50px;
+}
+
+#contact-section {
+  display: flex;
+  justify-content: center;
+}
+
+#message-form {
+  margin: 0px 25px 0px 50px;
+}
+
+#connect {
+  margin: 0px 50px 0px 25px;
+}
+
 * {
   color: #d9f9a5;;
   font-family: "Raleway","Courier New", Courier, monospace;
@@ -23,7 +64,7 @@ section {
   align-items: center;
   width: 75%;
   background-color: #463834;
-  margin: 50px;
+  /*margin: 50px;*/
   padding: 15px;
   border: thick #81726A solid;
   border-radius: 3px;

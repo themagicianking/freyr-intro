@@ -9,7 +9,8 @@ copyright.innerHTML = "© Thane Chaves " + thisYear;
 footer.appendChild(copyright);
 
 //Resume skills
-skills = ["strong writing and reading comprehension", "animal handling", "dog grooming", "swimming and swim instruction", "receptionist skills", "interpersonal skills", "childcare and development including specializing in children with special needs", "basic first aid training"];
+skills = ["HTML/CSS", "Javascript", "Git", "Ruby", "Python"]
+softSkills = ["strong writing and reading comprehension", "animal handling", "dog grooming", "swimming and swim instruction", "receptionist skills", "interpersonal skills", "childcare and development including specializing in children with special needs", "basic first aid training"];
 
 skillsSection = document.getElementById("skills");
 skillsList = skillsSection.querySelector("ul");
@@ -22,6 +23,8 @@ function addItemsToList(listElement, list) {
     listElement.appendChild(skill);
   };
 };
+
+experience = [{company: "Sit Means Sit", location: "Richmond, VA", position: "Dog Trainer", timeline: "September 2023 - Present"}, {company: "Whole Foods", location: "Richmond, VA", position: "Team Member", timeline: "May 2023 - September 2023"}, {company: "Dog Krazy", location: "Fredericksburg & Richmond, VA", position: "Warehouse Worker, Retail Associate, Dog Groomer", timeline: "January 2022 - April 2023"}, {company: "UPS", location: "Fredericksburg, VA", position: "Seasonal Parcel Carrier", timeline: "December 2021"}, {company: "Silverbrook Kennels", location: "Fredericksburg, VA", position: "Kennel Attendant", timeline: "March 2021 - November 2021"}, {company: "Kid's First Swim School", location: "Fredericksburg, VA", position: "Swim Instructor & Receptionist", timeline: "June 2019 - April 2020"}, {company: "Dogtopia", location: "Fredericksburg, VA", position: "Kennel Attendant", timeline: "October 2019 - March 2020"}, {company: "Starbucks", location: "Fredericksburg, VA", position: "Barista", timeline: "August 2018 - December 2018"}];
 
 //Handles user input after the form is submitted
 messageForm = document.querySelector('[name="leave_message"]');
@@ -133,4 +136,3 @@ fetch("https://api.github.com/users/themagicianking/repos?per_page=100")
     errorMessage.innerText = "There was an error loading projects.";
     projectList.appendChild(errorMessage);
   });
-  
