@@ -105,6 +105,9 @@ messageForm.addEventListener("submit", function () {
   messageForm.reset();
 });
 
+//Portfolio projects
+portfolioProjects = ["calculator-two", "etch-a-sketch-two", "hangman", "landing-page-2", "mastermind-2", "tic-tac-toe-three"];
+
 //Fetch GitHub repositories
 fetch("https://api.github.com/users/themagicianking/repos?per_page=100")
   .then(response => response.json())
@@ -113,20 +116,21 @@ fetch("https://api.github.com/users/themagicianking/repos?per_page=100")
     console.log(repositories);
     projectSection = document.getElementById("projects");
     projectList = projectSection.querySelector("ul");
-    for (let i = 0; i < repositories.length; i++) {
+    repositories.filter((repo) => portfolioProjects.includes(repo.name)).forEach((repo) => {
       project = document.createElement("li");
       projectDescription = document.createElement("span");
-      projectDescription.innerText = " — " + repositories[i].description;
+      projectDescription.innerText = " — " + repo.description;
       projectLink = document.createElement("a");
-      projectLink.innerText = repositories[i].name;
-      projectLink.href = repositories[i].html_url;
+      projectLink.innerText = repo.name;
+      projectLink.href = repo.html_url;
       project.appendChild(projectLink);
       project.appendChild(projectDescription);
       projectList.appendChild(project);
-    };
+    });
   })
   .catch(error => {
     errorMessage = document.createElement("li");
     errorMessage.innerText = "There was an error loading projects.";
     projectList.appendChild(errorMessage);
   });
+  
