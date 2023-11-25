@@ -13,12 +13,14 @@ skills = ["strong writing and reading comprehension", "animal handling", "dog gr
 
 skillsSection = document.getElementById("skills");
 skillsList = skillsSection.querySelector("ul");
+addItemsToList(skillsList, skills);
 
-//Adds styling to resume skills before appending them to the skills section
-for (let i = 0; i < skills.length; i++) {
-  let skill = document.createElement("li");
-  skill.innerHTML = "⇝   " + skills[i] + "   ⇜";
-  skillsList.appendChild(skill);
+function addItemsToList(listElement, list) {
+  for (let i = 0; i < list.length; i++) {
+    let skill = document.createElement("li");
+    skill.innerHTML = "⇝   " + list[i] + "   ⇜";
+    listElement.appendChild(skill);
+  };
 };
 
 //Handles user input after the form is submitted
@@ -103,24 +105,28 @@ messageForm.addEventListener("submit", function () {
   messageForm.reset();
 });
 
-//Fetch GitHub Repositories
-githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/themagicianking/repos?per_page=100");
-githubRequest.send();
-githubRequest.addEventListener("load", function () {
-  repositories = JSON.parse(this.response);
-  console.log(repositories);
-  projectSection = document.getElementById("projects");
-  projectList = projectSection.querySelector("ul");
-  for (let i = 0; i < repositories.length; i++) {
-    project = document.createElement("li");
-    projectDescription = document.createElement("span");
-    projectDescription.innerText = " — " + repositories[i].description;
-    projectLink = document.createElement("a");
-    projectLink.innerText = repositories[i].name;
-    projectLink.href = repositories[i].html_url;
-    project.appendChild(projectLink);
-    project.appendChild(projectDescription);
-    projectList.appendChild(project);
-  };
-});
+//Fetch GitHub repositories
+fetch("https://api.github.com/users/themagicianking/repos?per_page=100")
+  .then(response => response.json())
+  .then(data => {
+    repositories = data;
+    console.log(repositories);
+    projectSection = document.getElementById("projects");
+    projectList = projectSection.querySelector("ul");
+    for (let i = 0; i < repositories.length; i++) {
+      project = document.createElement("li");
+      projectDescription = document.createElement("span");
+      projectDescription.innerText = " — " + repositories[i].description;
+      projectLink = document.createElement("a");
+      projectLink.innerText = repositories[i].name;
+      projectLink.href = repositories[i].html_url;
+      project.appendChild(projectLink);
+      project.appendChild(projectDescription);
+      projectList.appendChild(project);
+    };
+  })
+  .catch(error => {
+    errorMessage = document.createElement("li");
+    errorMessage.innerText = "There was an error loading projects.";
+    projectList.appendChild(errorMessage);
+  });
