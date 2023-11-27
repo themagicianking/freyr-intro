@@ -26,6 +26,26 @@ function addItemsToList(listElement, list) {
 
 experience = [{company: "Sit Means Sit", location: "Richmond, VA", position: "Dog Trainer", timeline: "September 2023 - Present"}, {company: "Whole Foods", location: "Richmond, VA", position: "Team Member", timeline: "May 2023 - September 2023"}, {company: "Dog Krazy", location: "Fredericksburg & Richmond, VA", position: "Warehouse Worker, Retail Associate, Dog Groomer", timeline: "January 2022 - April 2023"}, {company: "UPS", location: "Fredericksburg, VA", position: "Seasonal Parcel Carrier", timeline: "December 2021"}, {company: "Silverbrook Kennels", location: "Fredericksburg, VA", position: "Kennel Attendant", timeline: "March 2021 - November 2021"}, {company: "Kid's First Swim School", location: "Fredericksburg, VA", position: "Swim Instructor & Receptionist", timeline: "June 2019 - April 2020"}, {company: "Dogtopia", location: "Fredericksburg, VA", position: "Kennel Attendant", timeline: "October 2019 - March 2020"}, {company: "Starbucks", location: "Fredericksburg, VA", position: "Barista", timeline: "August 2018 - December 2018"}];
 
+//Creates a list item for each past job
+experienceSection = document.getElementById("experience");
+experienceList = experienceSection.querySelector("ul");
+experience.forEach((job) => {
+  newExperience = document.createElement("li");
+  let company = document.createElement("span");
+  company.innerHTML = job.company;
+  let location = document.createElement("span");
+  location.innerHTML = job.location;
+  let position = document.createElement("span");
+  position.innerHTML = job.position;
+  let timeline = document.createElement("span");
+  timeline.innerHTML = job.timeline;
+  newExperience.appendChild(company);
+  newExperience.appendChild(location);
+  newExperience.appendChild(position);
+  newExperience.appendChild(timeline);
+  experienceList.appendChild(newExperience);
+});
+
 //Handles user input after the form is submitted
 messageForm = document.querySelector('[name="leave_message"]');
 messageForm.addEventListener("submit", function () {

@@ -99,6 +99,16 @@ footer {
   z-index: 100;
 }
 
+a {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+a:hover {
+  color:#463834;
+  background-color: #F8FED7;
+}
+
 #about, #skills, #experience, #connect {
   scroll-margin-top: 6em;
 }
@@ -218,6 +228,11 @@ button {
   padding: 8px;
   border: medium #D2D68D solid;
   border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #D2D68D;
 }
 
 .messages {
