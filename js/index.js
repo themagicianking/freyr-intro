@@ -19,7 +19,7 @@ addItemsToList(skillsList, skills);
 function addItemsToList(listElement, list) {
   for (let i = 0; i < list.length; i++) {
     let skill = document.createElement("li");
-    skill.innerHTML = "⇝   " + list[i] + "   ⇜";
+    skill.innerHTML = list[i];
     listElement.appendChild(skill);
   };
 };
