@@ -134,39 +134,77 @@ span {
   margin: 0px 5px;
 }
 
-/* Flexbox positioning */
+/* Page layout */
 
-#top-section {
+#intro-section {
   display: flex;
-  justify-content: center;
-  min-width: 100%;
+  margin: 0 2%;
 }
 
-#skills {
+#column-one {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  margin: 30px 0px 30px 50px;
+}
+
+#column-two {
+  display: flex;
+  flex: 3 3;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 30px 50px 30px 30px;
+}
+
+#proficiencies {
+  display: flex;
+  flex-grow: 1;
   max-width: 150px;
-  margin: 30px 0px 0px 0px;
-}
-
-#projects {
-  max-width: 300px;
-  min-width: 50%;
-  margin: 30px 30px;
 }
 
 #about {
-  max-width: 150px;
-  margin: 30px 0px 0px 0px;
+  max-height: 150px;
+  width: 98%;
+  margin-bottom: 2%;
+}
+
+#projects {
+  width: 98%;
+}
+
+#experience-section {
+  display: flex;
+  margin: 0 2%;
+}
+
+#column-three {
+  display: flex;
+  flex: 3 3;
+  flex-direction: column;
+  margin: 30px 30px 30px 50px;
+}
+
+#column-four {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 30px 50px 30px 0px;
 }
 
 #experience {
+  width: 98%
+}
+
+#soft-skills {
   display: flex;
-  min-width: 75%;
-  margin: 50px;
+  flex-grow: 1;
+  max-width: 150px;
 }
 
 #contact-section {
   display: flex;
-  justify-content: center;
+  margin: 0 2%;
 }
 
 #message-form {
@@ -187,7 +225,7 @@ span {
   padding: 20px 30px;
 }
 
-.skills {
+.proficiencies {
   align-items: center;
   list-style-type: none;
   text-align: center;
@@ -262,7 +300,7 @@ span {
 /* Prevents in page links from scrolling too far */
 
 #about,
-#skills,
+#proficiencies,
 #experience,
 #connect {
   scroll-margin-top: 6em;
@@ -302,7 +340,7 @@ span {
   }
 
   #about,
-  #skills,
+  #proficiencies,
   #experience,
   #connect {
     scroll-margin-top: 8em;

@@ -9,12 +9,12 @@ copyright.innerHTML = "© Thane Chaves " + thisYear;
 footer.appendChild(copyright);
 
 //Resume skills
-skills = ["HTML/CSS", "Javascript", "Git", "Ruby", "Python"]
+proficiencies = ["HTML/CSS", "Javascript", "Git", "Ruby", "Python"]
 softSkills = ["strong writing and reading comprehension", "animal handling", "dog grooming", "swimming and swim instruction", "receptionist skills", "interpersonal skills", "childcare and development including specializing in children with special needs", "basic first aid training"];
 
-skillsSection = document.getElementById("skills");
-skillsList = skillsSection.querySelector("ul");
-addItemsToList(skillsList, skills);
+proficienciesSection = document.getElementById("proficiencies");
+proficienciesList = proficienciesSection.querySelector("ul");
+addItemsToList(proficienciesList, proficiencies);
 
 function addItemsToList(listElement, list) {
   for (let i = 0; i < list.length; i++) {
