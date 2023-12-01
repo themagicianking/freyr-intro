@@ -2,7 +2,7 @@
 
 /* General stylings */
 
-* {
+p, li, a, label, span, button {
   color: #d9f9a5;
   font-family: "Raleway", "Courier New", Courier, monospace;
   font-size: 20px;
@@ -67,7 +67,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 0 15px;
   border: thick solid #81726A;
   border-radius: 3px;
   width: 75%;
@@ -105,6 +105,7 @@ h2 {
   font-family: "Major Mono Display", "Courier New", Courier, monospace;
   font-size: 30px;
   font-weight: 400;
+  margin: 30px 0 15px 0;
 }
 
 ul {
@@ -134,7 +135,15 @@ span {
   margin: 0px 5px;
 }
 
-/* Page layout */
+/* Page layout and individual stylings by section */
+
+.header-and-footer {
+  justify-content: left;
+  color: #d9f9a5;
+  font-family: "Major Mono Display", "Courier New", Courier, monospace;
+  font-size: 30px;
+  padding: 20px 30px;
+}
 
 #intro-section {
   display: flex;
@@ -156,23 +165,53 @@ span {
   margin: 30px 50px 30px 30px;
 }
 
-#proficiencies {
+#skills-section {
   display: flex;
   flex-grow: 1;
+  justify-content: flex-start;
   max-width: 150px;
 }
 
-#about {
-  max-height: 150px;
+.skills {
+  list-style-type: none;
+  text-align: center;
+}
+
+#about-section {
+  max-height: 200px;
   width: 98%;
   margin-bottom: 2%;
 }
 
-#projects {
+p.about {
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+#projects-section {
+  border: thick  solid #D2D68D;
+  background-color: #81726A;
   width: 98%;
 }
 
-#experience-section {
+.projects {
+  list-style-type: none;
+}
+
+a.projects {
+  font-family: "Major Mono Display", "Courier New", Courier, monospace;
+  font-size: 15px;
+}
+
+li.projects {
+  border-top: thin dotted #D9F9A5;
+}
+
+span.projects {
+  font-size: 17px;
+}
+
+#resume-section {
   display: flex;
   margin: 0 2%;
 }
@@ -192,14 +231,47 @@ span {
   margin: 30px 50px 30px 0px;
 }
 
-#experience {
+#experience-section {
+  border: thick solid #D2D68D;
+  background-color: #81726A;
   width: 98%
 }
 
-#soft-skills {
+ul.experience {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: justify;
+  list-style-type: none;
+}
+
+li.experience {
+  display: flex;
+  padding: 1em;
+  width: 90%;
+  border-bottom: thin dotted #D9F9A5;
+}
+
+span.experience {
+  font-size: 17px;
+  width: 25%;
+}
+
+#soft-skills-section {
   display: flex;
   flex-grow: 1;
+  justify-content: flex-start;
   max-width: 150px;
+}
+
+.soft-skills {
+  list-style-type: none;
+  text-align: center;
+}
+
+li.soft-skills {
+  font-size: 17px;
 }
 
 #contact-section {
@@ -208,56 +280,19 @@ span {
 }
 
 #message-form {
+  display: flex;
+  max-width: 50%;
   margin: 0px 25px 0px 50px;
 }
 
-#connect {
-  margin: 0px 50px 0px 25px;
-}
-
-/* Individual stylings */
-
-.header-and-footer {
-  justify-content: left;
-  color: #d9f9a5;
-  font-family: "Major Mono Display", "Courier New", Courier, monospace;
-  font-size: 30px;
-  padding: 20px 30px;
-}
-
-.proficiencies {
-  align-items: center;
-  list-style-type: none;
-  text-align: center;
-}
-
-
-#experience {
-  border: thick  solid #D2D68D;
-  background-color: #81726A;
-}
-
-.experience-list {
+#user-info-section {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: justify;
-  list-style-position: inside;
 }
 
-.experience-list-item {
-  padding: 1em;
-  border: medium solid #D9F9A5;
-  border-radius: 5px;
-  max-width: 30%;
-  background-color: #463834;
-  margin-top: 3%;
-}
-
-#message-form {
-  display: flex;
-  max-width: 50%;
+#connect-section {
+  margin: 0px 50px 0px 25px;
 }
 
 .connect {
@@ -269,6 +304,7 @@ span {
 #messages-section {
   border: none;
   background-color: #d9f9a5;
+  margin: 30px 0;
 }
 
 #user-info,
@@ -299,10 +335,10 @@ span {
 
 /* Prevents in page links from scrolling too far */
 
-#about,
-#proficiencies,
-#experience,
-#connect {
+#about-section,
+#skills-section,
+#experience-section,
+#connect-section {
   scroll-margin-top: 6em;
 }
 
@@ -340,7 +376,7 @@ span {
   }
 
   #about,
-  #proficiencies,
+  #skills,
   #experience,
   #connect {
     scroll-margin-top: 8em;
