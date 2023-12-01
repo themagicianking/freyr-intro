@@ -242,7 +242,6 @@ ul.experience {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: justify;
   list-style-type: none;
 }
 
@@ -285,10 +284,13 @@ li.soft-skills {
   margin: 0px 25px 0px 50px;
 }
 
-#user-info-section {
+#user-info-section,
+#user-message-input {
   display: flex;
   flex-direction: column;
-  align-items: justify;
+  flex-grow: 1;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 #connect-section {
@@ -307,16 +309,6 @@ li.soft-skills {
   margin: 30px 0;
 }
 
-#user-info,
-#user-message {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: justify;
-  text-align: justify;
-  margin-right: 20px;
-  margin-left: 20px;
-}
 
 .messages {
   display: flex;
@@ -375,28 +367,63 @@ li.soft-skills {
     top: 0;
   }
 
-  #about,
-  #skills,
-  #experience,
-  #connect {
+  #about-section,
+  #skills-section,
+  #experience-section,
+  #connect-section {
     scroll-margin-top: 8em;
   }
 
-  .experience-list {
+  #intro-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #column-one, #column-two, #column-three, #column-four {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    list-style-position: inside;
+    width: 100%;
+    margin: 0;
   }
 
-  .experience-list-item {
-    max-width: 70%;
+  #about-section, #projects-section, #skills-section, #experience-section, #soft-skills-section {
+    max-width: 80%;
+    margin: 20px;
   }
 
-  #message-form {
-    max-width: 300px;
+  #resume-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  li.experience {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  span.experience {
+    font-size: 12px;
+  }
+
+  #contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #message-form, #connect-section {
+    max-width: 80%;
     text-align: center;
+    margin: 0 0 15px 0;
+  }
+
+  #user-info, #user-message {
+    align-items: center;
   }
 
   .messages {
