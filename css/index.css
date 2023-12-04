@@ -2,7 +2,7 @@
 
 /* General stylings */
 
-p, li, a, label, span, button {
+p, li, a.header-and-footer, label, span, button {
   color: #d9f9a5;
   font-family: "Raleway", "Courier New", Courier, monospace;
   font-size: 20px;
@@ -37,12 +37,12 @@ footer {
   justify-content: center;
 }
 
-a {
+a.header-and-footer, a.projects {
   padding: 5px;
   border-radius: 5px;
 }
 
-a:hover {
+a.header-and-footer:hover, a.projects:hover {
   color: #463834;
   background-color: #F8FED7;
 }
@@ -147,6 +147,7 @@ span {
 
 #intro-section {
   display: flex;
+  justify-content: center;
   margin: 0 2%;
 }
 
@@ -199,6 +200,7 @@ p.about {
 }
 
 a.projects {
+  color: #D9F9A5;
   font-family: "Major Mono Display", "Courier New", Courier, monospace;
   font-size: 15px;
 }
@@ -213,6 +215,8 @@ span.projects {
 
 #resume-section {
   display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 0 2%;
 }
 
@@ -253,7 +257,7 @@ li.experience {
 }
 
 span.experience {
-  font-size: 17px;
+  font-size: 12px;
   width: 25%;
 }
 
@@ -275,12 +279,14 @@ li.soft-skills {
 
 #contact-section {
   display: flex;
+  justify-content: center;
+  max-width: 100%;
   margin: 0 2%;
 }
 
 #message-form {
   display: flex;
-  max-width: 50%;
+  min-width: 40%;
   margin: 0px 25px 0px 50px;
 }
 
@@ -294,13 +300,22 @@ li.soft-skills {
 }
 
 #connect-section {
+  display: flex;
+  border: thick solid #D2D68D;
+  background-color: #81726A;
+  min-width: 40%;
   margin: 0px 50px 0px 25px;
 }
 
-.connect {
+ul.connect {
+  display: flex;
+  flex-direction: row;
   list-style-type: none;
-  text-align: center;
-  align-items: center;
+}
+
+img.connect {
+  width: 50px;
+  height: auto;
 }
 
 #messages-section {
@@ -357,7 +372,12 @@ li.soft-skills {
 
   input,
   textarea {
-    max-width: 200px;
+    max-width: 100%;
+  }
+
+  #user-message-input {
+    display: flex;
+    align-items: center;
   }
 
   .header-and-footer {
